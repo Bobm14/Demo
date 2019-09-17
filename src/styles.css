@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+
+html {
+    background: rgba(214, 227, 235, 0.7);
+    background: url(./assets/imagenes/background_white.jpg);
+    position: relative;
+}

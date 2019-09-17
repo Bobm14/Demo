@@ -1,0 +1,8 @@
+.bodyContainer {
+    margin: 3% 5% 5% 5%;
+}
+
+body {
+    background: transparent;
+    z-index: -10000;
+}
