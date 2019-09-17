@@ -3,6 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.4.
 
 Install 
+
 npm install --save xlsx
 npm install file-saver --save
 npm install --save ng2-charts
