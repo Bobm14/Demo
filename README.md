@@ -5,8 +5,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Install 
 
 npm install --save xlsx
+
 npm install file-saver --save
+
 npm install --save ng2-charts
+
 npm install --save chart.js
 
 ## Development server
