@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { CalificacionesComponent } from './component/calificaciones/calificaciones.component';
 import { MatRippleModule } from '@angular/material';
 import { ChartsModule } from 'ng2-charts';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ChartsModule } from 'ng2-charts';
     BrowserModule,
     NgbModule,
     MatRippleModule,
-    ChartsModule
+    ChartsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

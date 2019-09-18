@@ -6,13 +6,55 @@
                     <div class="col-sm-12">
                         <h2></h2>
                     </div>
-                    <div class="">
+                    <div class="text-left">
                         <input name="fileXls" id="fileXls" class="inputfile" (change)="incomingfile($event)" type="file" accept=".xlsx">
                         <label class="btn btn-danger btn-block" for="fileXls"><span class="fas fa-download">Cargar Archivo</span></label>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-5">
+                    <div class="col-md-3">
+                        <div *ngIf="Temperatura">
+                            <div class="list-group-item list-group-item-action active">Temperatura en Hermosillo</div>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    {{ Temperatura }}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div *ngIf="peorCalficiacion">
+                            <div class="list-group-item list-group-item-action active">CALIFICACIÓN MENOR</div>
+                            <ul class="list-group" *ngFor="let item of peorCalficiacion">
+                                <li class="list-group-item">
+                                    {{ item.Nombres + " " + item["Apellido Paterno"] + " " + item["Apellido Materno"] }}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div *ngIf="mayorCalificacion">
+                            <div class="list-group-item list-group-item-action active">CALIFICACION MAYOR</div>
+                            <ul class="list-group" *ngFor="let item of mayorCalificacion">
+                                <li class="list-group-item">
+                                    {{ item.Nombres + " " + item["Apellido Paterno"] + " " + item["Apellido Materno"] }}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div *ngIf="promedio">
+                            <div class="list-group-item list-group-item-action active">PROMEDIO GENERAL</div>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    {{ promedio }}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -42,6 +84,9 @@
                                     </th>
                                     <th>
                                     </th>
+                                    <th>
+
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -55,44 +100,16 @@
                                     <td>{{r.Calificacion}}</td>
                                     <td>{{r.Password}}</td>
                                     <td>
-                                        <input type="button" class="btn btn-primary" value="Generar">
+                                        <input id="inputP" type="button" class="btn btn-primary" (click)="rotatePassword(r.Password,RotacionN.value)" value="Generar">
+                                    </td>
+                                    <td>
+                                        <input #RotacionN type="number" value="1" min:1 class="form-controls-text">
                                     </td>
 
                                 </tr>
 
                             </tbody>
                         </table>
-                    </div>
-                    <div class="col-md-1"></div>
-                    <div class="col-md-2">
-                        <div *ngIf="peorCalficiacion">
-                            <div class="list-group-item list-group-item-action active">CALIFICACIÓN MENOR</div>
-                            <ul class="list-group" *ngFor="let item of peorCalficiacion">
-                                <li class="list-group-item">
-                                    {{ item.Nombres + " " + item["Apellido Paterno"] + " " + item["Apellido Materno"] }}
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div *ngIf="mayorCalificacion">
-                            <div class="list-group-item list-group-item-action active">CALIFICACION MAYOR</div>
-                            <ul class="list-group" *ngFor="let item of mayorCalificacion">
-                                <li class="list-group-item">
-                                    {{ item.Nombres + " " + item["Apellido Paterno"] + " " + item["Apellido Materno"] }}
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div *ngIf="promedio">
-                            <div class="list-group-item list-group-item-action active">PROMEDIO GENERAL</div>
-                            <ul class="list-group">
-                                <li class="list-group-item">
-                                    {{ promedio }}
-                                </li>
-                            </ul>
-                        </div>
                     </div>
 
                 </div>
